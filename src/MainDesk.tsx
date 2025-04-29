@@ -15,6 +15,14 @@ class MainDesk extends BaseComponent {
     };
     this.draggableRef = createRef();
   }
+  componentDidMount(): void {
+    this.draggableRef.current.focus();
+    document.getElementById("input-text-controller")?.focus();
+    document.getElementById("root")?.addEventListener("click", () => {
+      document.getElementById("input-text-controller")?.focus();
+    });
+
+  }
 
   render() {
     return (

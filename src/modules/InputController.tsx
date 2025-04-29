@@ -11,9 +11,7 @@ export class InputController extends BaseComponent {
   }
   setTextControllerValue(event: any) {
     event.preventDefault();
-    console.log("Event",event);
     if (event?.key == "Enter") {
-        console.log("Enter")
       return null;
     } else {
       this.props.setCommandControllerState({commandValue: event?.target?.value});
@@ -22,9 +20,11 @@ export class InputController extends BaseComponent {
   handleProcessCommand(event:any){
     this.props.processCommands(event);
   }
-  componentDidMount(): void {}
+  componentDidMount(): void {
+    document.getElementById("input-text-controller")?.focus();
+  }
   render() {
-    console.log("InputController",this)
+    // console.log("InputController",this)
     return (
       <div className='input-actions'>
         <form

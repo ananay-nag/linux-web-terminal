@@ -174,7 +174,7 @@ body {
   border: 0;
   outline: none;
   color: white;
-  margin-left: 10px;
+  /* margin-left: 10px; */
   font-weight: 600;
   width: -webkit-fill-available;
 }

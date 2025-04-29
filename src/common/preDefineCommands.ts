@@ -1,56 +1,96 @@
-export const availableCommands = {
-  "show": {
-    "name": "show",
-    "description": "Show the commands and their details",
-    "commands": {
-      "user": {
-        "name": "user",
-        "description": "use for user details"
+import { IAvailableCommands } from "./types/Commands";
+export const availableCommands : IAvailableCommands = { 
+  params: ["help", "user", "form"],
+  description: "List of available commands.",
+  commands: {
+    help: {
+      name: "help",
+      params: ["user", "form"],
+      description: "Show help for the available commands.",
+      details: {
+        usages: "Usage : help [options]",
+        options: {
+          user: {
+            name: "users",
+            description: "Show help for the user commands.",
+          },
+          form: {
+            name: "form",
+            description: "Show help for the form commands.",
+          },
+        },
       },
-      "web": {
-        "name": "form",
-        "description": "use for login, signup, register in the system."
+    },
+    user: {
+      name: "user",
+      params: [
+        "help",
+        "show",
+        "logout",
+        "delete-account",
+        "chamge-password",
+        "update",
+      ],
+      description: "List of commands for user.",
+      details: {
+        usages: "Usage : user [options]",
+        options: {
+          help:{
+            name:"help",
+            description:"Show help for the user commands."
+          },
+          show:{
+            name:"show",
+            description:"Show user details."
+          },
+          logout:{
+            name:"logout",
+            description:"Logout from your account."
+          },
+          "delete-account":{
+            name:"delete-account",
+            description:"Delete your account."
+          },
+          "change-password":{
+            name:"change-password",
+            description:"Change your password."
+          },
+          update:{
+            name:"update",
+            description:"Update your profile."
+          },
+        },
       },
-      "clear": {
-        "name": "clear",
-        "description": "use for clear the current screen."
-      }
+    },
+    form: {
+      name: "form",
+      params: ["help", "login", "signup", "register", "reset"],
+      description: "List of commands for form.",
+      details: {
+        usages: "Usage : form [options]",
+        options: {
+          help: {
+            name: "help",
+            description: "Show help for the form commands.",
+          },
+          login: {
+            name: "login",
+            description: "Login to your account.",
+          },
+          signup: {
+            name: "signup",
+            description: "Sign up for a new account.",
+          },
+          register: {
+            name: "register",
+            description: "Register for a new account.",
+          },
+          reset: {
+            name: "reset",
+            description: "Reset the form.",
     }
-  },
-  "user": {
-    "name": "user",
-    "description": "",
-    "commands": {
-      "clear": {
-        "name": "clear",
-        "description": ""
-      },
-      "web": {
-        "name": "form",
-        "description": ""
-      }
-    }
-  },
-  "form": {
-    "name": "form",
-    "description": "",
-    "commands": {
-      "login": {
-        "name": "login",
-        "description": ""
-      },
-      "signup": {
-        "name": "signup",
-        "description": ""
-      },
-      "reset": {
-        "name": "reset",
-        "description": ""
-      }
-    }
-  },
-  "clear": {
-    "name": "Clear",
-    "description": "use for clear the current screen."
   }
-}
+      },
+    },
+  }
+};
